@@ -298,10 +298,16 @@
 </div>
 
 <script>
+let likes = localStorage.getItem("likes") ? parseInt(localStorage.getItem("likes")) : 1200;
+
+function updateLikesDisplay() {
+    document.getElementById("likeCount").innerText = likes;
+}
+
 function likePost() {
-    let likeCount = document.getElementById("likeCount");
-    let currentLikes = parseInt(likeCount.innerText) || 0;
-    likeCount.innerText = currentLikes + 1;
+    likes++;
+    localStorage.setItem("likes", likes);
+    updateLikesDisplay();
 }
 
 function toggleComments() {
@@ -309,26 +315,19 @@ function toggleComments() {
 }
 
 function postComment() {
-    let input = document.getElementById("commentInput");
-    let commentText = input.value.trim();
-    if (commentText === "") return;
+    const input = document.getElementById("commentInput");
+    const text = input.value.trim();
+    if (!text) return;
 
-    let commentsList = document.getElementById("commentsList");
-
-    // Create new comment element
-    let comment = document.createElement("div");
+    const comment = document.createElement("div");
     comment.className = "p-2 bg-white rounded-lg shadow text-gray-700";
-    comment.innerText = commentText;
+    comment.innerText = text;
 
-    // Add new comment to list
-    commentsList.prepend(comment);
+    document.getElementById("commentsList").prepend(comment);
 
-    // Increase comment count
-    let commentCount = document.getElementById("commentCount");
-    let currentCount = parseInt(commentCount.innerText) || 0;
-    commentCount.innerText = currentCount + 1;
+    const commentCount = document.getElementById("commentCount");
+    commentCount.innerText = parseInt(commentCount.innerText || 0) + 1;
 
-    // Clear textarea
     input.value = "";
 }
 
@@ -343,7 +342,10 @@ function sharePost() {
         alert("Copy this link to share: " + window.location.href);
     }
 }
+
+document.addEventListener("DOMContentLoaded", updateLikesDisplay);
 </script>
+
 
             
         </div>
@@ -538,4 +540,5 @@ function sharePost() {
         
     </script>
 </body>
+
 </html>
