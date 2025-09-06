@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Lekh Verses</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Simple accordion toggle
+    function toggleFAQ(id) {
+      const answer = document.getElementById(id);
+      answer.classList.toggle("hidden");
+    }
+  </script>
+</head>
+<body class="bg-amber-50 text-amber-900">
+
+  <!-- Header -->
+  <header class="bg-amber-900 text-white py-6 shadow-lg">
+    <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Lekh Verses</h1>
+      <a href="index.html" class="hover:underline text-sm">⬅ Back to Home</a>
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-4">❓ Frequently Asked Questions</h2>
+    <p class="text-lg text-amber-700">Find answers to the most common questions about Lekh Verses.</p>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+    
+    <!-- FAQ 1 -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <button onclick="toggleFAQ('faq1')" class="w-full text-left font-semibold flex justify-between items-center">
+        How can I submit my poem? <span class="text-amber-700">+</span>
+      </button>
+      <p id="faq1" class="hidden mt-3 text-amber-800">
+        You can submit your poem through our <a href="submit.html" class="text-amber-700 font-medium hover:underline">Submit Your Work</a> page by filling out the form.
+      </p>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <button onclick="toggleFAQ('faq2')" class="w-full text-left font-semibold flex justify-between items-center">
+        Do I need to pay to publish my poem? <span class="text-amber-700">+</span>
+      </button>
+      <p id="faq2" class="hidden mt-3 text-amber-800">
+        No, submitting and publishing your poems on Lekh Verses is completely free.
+      </p>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <button onclick="toggleFAQ('faq3')" class="w-full text-left font-semibold flex justify-between items-center">
+        In which languages can I submit my work? <span class="text-amber-700">+</span>
+      </button>
+      <p id="faq3" class="hidden mt-3 text-amber-800">
+        We welcome poems in Hindi, Urdu, and English. Bilingual and mixed-language poetry is also encouraged.
+      </p>
+    </div>
+
+    <!-- FAQ 4 -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <button onclick="toggleFAQ('faq4')" class="w-full text-left font-semibold flex justify-between items-center">
+        Will I be notified if my poem gets published? <span class="text-amber-700">+</span>
+      </button>
+      <p id="faq4" class="hidden mt-3 text-amber-800">
+        Yes, you will receive an email confirmation once your poem is reviewed and selected for publishing.
+      </p>
+    </div>
+
+    <!-- FAQ 5 -->
+    <div class="bg-white rounded-xl shadow-md p-6">
+      <button onclick="toggleFAQ('faq5')" class="w-full text-left font-semibold flex justify-between items-center">
+        Can I submit more than one poem? <span class="text-amber-700">+</span>
+      </button>
+      <p id="faq5" class="hidden mt-3 text-amber-800">
+        Absolutely! You can submit multiple poems. Each submission will be reviewed separately.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-amber-900 text-white py-6 mt-16">
+    <div class="max-w-4xl mx-auto text-center text-sm">
+      © 2022 Lekh Verses. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
